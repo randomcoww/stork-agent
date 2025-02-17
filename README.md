@@ -1,4 +1,4 @@
-### Container for ISC Stork
+### Container for ISC Stork Agent
 
 https://github.com/isc-projects/stork
 
