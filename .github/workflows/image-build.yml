@@ -28,7 +28,7 @@ jobs:
     steps:
     - name: Set tag
       run: |
-        echo VERSION=$(wget -O - https://api.github.com/repos/isc-projects/stork/git/refs/tags | jq -r 'last(.[] | select(.ref | startswith("refs/tags/"))).ref' | sed 's/refs\/tags\///') | tee -a "$GITHUB_ENV"
+        echo VERSION=$(wget -O - https://api.github.com/repos/isc-projects/stork/git/refs/tags | jq -r 'last(.[] | select(.ref | startswith("refs/tags/v"))).ref' | sed 's/refs\/tags\///') | tee -a "$GITHUB_ENV"
         echo TAG=$(date -u +'%Y%m%d.%H%M') | tee -a "$GITHUB_ENV"
 
     - name: Build and release container
